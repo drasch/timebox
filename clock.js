@@ -3,13 +3,13 @@ function setup() {
 
   frameRate(5);
 
-  font = loadFont('ttf/Monocraft.otf');
+  font = loadFont('ttf/subway-ticker.regular.ttf');
   textFont(font);
   canvasSetup();
 }
 
 function canvasSetup() {
-  w = min(windowWidth * 0.2 ,windowHeight * 0.4);
+  w = min(windowWidth * 0.3 ,windowHeight * 0.4);
   textSize(w);
 }
 
