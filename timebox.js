@@ -3,7 +3,7 @@ let c;
 let w;
 let startTime=new Date();
 
-let white=245;
+let white=150;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -65,7 +65,6 @@ function windowResized() {
 }
 
 function keyPressed({code}) {
-  console.log({code});
   if (setTime === 0) {
     startTime = new Date();
   }
