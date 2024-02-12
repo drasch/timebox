@@ -3,6 +3,7 @@ let w;
 let endTime=new Date();
 
 let bg=20;
+let timerColor='#dd1111';
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -14,8 +15,8 @@ function setup() {
 function canvasSetup() {
   background(bg);
   w = min(windowWidth,windowHeight) * 0.8;
-  stroke('red');
-  fill('red');
+  stroke(timerColor);
+  fill(timerColor);
   textSize(70);
   textAlign(CENTER, CENTER);
   strokeWeight(2);
@@ -36,7 +37,7 @@ function draw() {
   strokeWeight(1.0);
   arc(windowWidth/2.0,windowHeight/2.0,w,w, 0, 2*PI, PIE);
 
-  fill('red');
+  fill(timerColor);
   strokeWeight(0);
   arc(windowWidth/2.0,windowHeight/2.0,w,w, min(arcLength, 3*HALF_PI-0.01), 3 * HALF_PI, PIE);
 
