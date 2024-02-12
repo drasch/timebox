@@ -1,4 +1,4 @@
-let setTime=60;
+let setTime=0;
 let c;
 let w;
 let startTime=new Date();
@@ -57,11 +57,34 @@ function draw() {
 }
 
 function mousePressed() {
-  startTime=new Date();
-  loop();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   canvasSetup();
+}
+
+function keyPressed({code}) {
+  console.log({code});
+  if (keyCode === 's') {
+    // start/pause?
+  }
+  else if (code === 'KeyR') {
+    startTime = new Date();
+    setTime = 0;
+  }
+  else if (code === 'Digit1') {
+    setTime += 1;
+  }
+  else if (code === 'Digit5') {
+    setTime += 5;
+  }
+  else if (code === 'Digit9') {
+    setTime += 10;
+  }
+  else if (code === 'Digit0') {
+    setTime += 60;
+  }
+  setTime = min(60, setTime);
+  loop();
 }
