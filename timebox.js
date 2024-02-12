@@ -1,7 +1,6 @@
-let setTime=0;
 let c;
 let w;
-let startTime=new Date();
+let endTime=new Date();
 
 let bg=20;
 function setup() {
@@ -29,7 +28,7 @@ function canvasSetup() {
 }
 
 function draw() {
-  let time = setTime - (new Date() - startTime)/(1000.0*60);
+  let time = (endTime - new Date())/(1000.0*60);
   let arcLength = (60-time)/60.0 * 2* PI - HALF_PI;
 
   stroke(bg);
@@ -69,28 +68,34 @@ function windowResized() {
   canvasSetup();
 }
 
-function keyPressed({code}) {
-  if (setTime === 0) {
-    startTime = new Date();
+function addTime(mins) {
+  if (endTime < new Date()) {
+    endTime = new Date();
   }
+  endTime = new Date(endTime.getTime() + 1000.0*60*mins);
+  endTime = min(new Date((new Date).getTime()+ 1000.0*60*60), endTime)
+}
 
+function keyPressed({code}) {
   if (code === 'KeyR') {
-    setTime = 0;
+    endTime = new Date();
     noLoop();
     return;
   }
   else if (code === 'Digit1') {
-    setTime += 1;
+    addTime(1);
   }
   else if (code === 'Digit5') {
-    setTime += 5;
+    addTime(5);
+  }
+  else if (code === 'Digit8') {
+    addTime(10);
   }
   else if (code === 'Digit9') {
-    setTime += 10;
+    addTime(25);
   }
   else if (code === 'Digit0') {
-    setTime += 60;
+    addTime(30);
   }
-  setTime = min(60, setTime);
   loop();
 }
