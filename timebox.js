@@ -66,12 +66,14 @@ function windowResized() {
 
 function keyPressed({code}) {
   console.log({code});
-  if (keyCode === 's') {
-    // start/pause?
-  }
-  else if (code === 'KeyR') {
+  if (setTime === 0) {
     startTime = new Date();
+  }
+
+  if (code === 'KeyR') {
     setTime = 0;
+    noLoop();
+    return;
   }
   else if (code === 'Digit1') {
     setTime += 1;
