@@ -3,7 +3,7 @@ let w;
 let endTime=new Date();
 
 let bg=20;
-let timerColor='#dd1111';
+let timerColor='#881111';
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
