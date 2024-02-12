@@ -17,13 +17,13 @@ function canvasSetup() {
   w = min(windowWidth,windowHeight) * 0.8;
   stroke('red');
   fill('red');
-  textSize(24);
+  textSize(70);
   textAlign(CENTER, CENTER);
   strokeWeight(2);
-  text('15', windowWidth/2.0 - w/2.0 - 20, windowHeight/2.0);
-  text('30', windowWidth/2.0, windowHeight/2.0 + w/2.0 + 20);
-  text('45', windowWidth/2.0 + w/2.0 + 20, windowHeight/2.0);
-  text('60', windowWidth/2.0, windowHeight/2.0 - w/2.0 - 20);
+  text('15', windowWidth/2.0 - w/2.0 - 40, windowHeight/2.0);
+  text('30', windowWidth/2.0, windowHeight/2.0 + w/2.0 + 40);
+  text('45', windowWidth/2.0 + w/2.0 + 40, windowHeight/2.0);
+  text('60', windowWidth/2.0, windowHeight/2.0 - w/2.0 - 40);
   stroke(white);
 
 }
