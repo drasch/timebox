@@ -3,17 +3,17 @@ let c;
 let w;
 let startTime=new Date();
 
-let white=150;
+let bg=20;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  background(white);
   frameRate(30);
 
   canvasSetup();
 }
 
 function canvasSetup() {
+  background(bg);
   w = min(windowWidth,windowHeight) * 0.8;
   stroke('red');
   fill('red');
@@ -24,7 +24,7 @@ function canvasSetup() {
   text('30', windowWidth/2.0, windowHeight/2.0 + w/2.0 + 40);
   text('45', windowWidth/2.0 + w/2.0 + 40, windowHeight/2.0);
   text('60', windowWidth/2.0, windowHeight/2.0 - w/2.0 - 40);
-  stroke(white);
+  stroke(bg);
 
 }
 
@@ -32,8 +32,8 @@ function draw() {
   let time = setTime - (new Date() - startTime)/(1000.0*60);
   let arcLength = (60-time)/60.0 * 2* PI - HALF_PI;
 
-  stroke(white);
-  fill(white);
+  stroke(bg);
+  fill(bg);
   strokeWeight(1.0);
   arc(windowWidth/2.0,windowHeight/2.0,w,w, 0, 2*PI, PIE);
 
