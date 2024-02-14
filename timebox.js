@@ -26,6 +26,7 @@ function canvasSetup() {
   text('60', windowWidth/2.0, windowHeight/2.0 - w/2.0 - 40);
   stroke(bg);
 
+  noCursor();
 }
 
 function draw() {

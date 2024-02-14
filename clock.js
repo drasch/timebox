@@ -11,6 +11,8 @@ function setup() {
 function canvasSetup() {
   w = min(windowWidth * 0.3 ,windowHeight * 0.4);
   textSize(w);
+
+  noCursor();
 }
 
 function draw() {
