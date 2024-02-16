@@ -1,6 +1,6 @@
 # timebox
 
-I build this to put behind me while on camera.
+I built this to put behind me while on camera.
 
 ## timer
 
