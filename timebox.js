@@ -64,7 +64,7 @@ function draw() {
   }
   if (time < 0) {
     alarming = true;
-    endOfTimer(time);
+    //endOfTimer(time);
     frameRate(1);
   }
   if (0 < time && time < 0.5) {
