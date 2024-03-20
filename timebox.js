@@ -7,7 +7,7 @@ let bg = 20;
 let endColor = '#881111';
 let endColor2 = '#ffffff';
 let timerColor = '#881111';
-let textsize = 0;
+let textsize = 40;
 let e = 5;
 let e2 = 5;
 function setup() {
@@ -26,10 +26,10 @@ function canvasSetup() {
   textSize(70);
   textAlign(CENTER, CENTER);
   strokeWeight(2);
-  text('15', windowWidth / 2.0 - w / 2.0 - 40, windowHeight / 2.0);
-  text('30', windowWidth / 2.0, windowHeight / 2.0 + w / 2.0 + 40);
-  text('45', windowWidth / 2.0 + w / 2.0 + 40, windowHeight / 2.0);
-  text('60', windowWidth / 2.0, windowHeight / 2.0 - w / 2.0 - 40);
+  text('15', windowWidth / 2.0 - w / 2.0 - 50, windowHeight / 2.0);
+  text('30', windowWidth / 2.0, windowHeight / 2.0 + w / 2.0 + 50);
+  text('45', windowWidth / 2.0 + w / 2.0 + 50, windowHeight / 2.0);
+  text('60', windowWidth / 2.0, windowHeight / 2.0 - w / 2.0 - 50);
   stroke(bg);
   noCursor();
 }
@@ -67,7 +67,7 @@ function draw() {
     //endOfTimer(time);
     frameRate(1);
   }
-  if (0 < time && time < 0.5) {
+  if (0 < time && time <= 1.0) {
     almostDone(time)
   }
 
@@ -135,28 +135,30 @@ function keyPressed({ code }) {
   loop();
 }
 function almostDone(time) {
-  if (0.25 < time && time < 0.5) {
-    if (textsize > 200) {
+  if (0.25 < time && time <= 1.0) {
+    if (Math.floor(time*30*60) % 60 == 30) {
       e2 = -5
     }
-    if (textsize < 40) {
+    if (Math.floor(time*30*60) % 60 == 0) {
+      console.log(time);
+      textsize=40
       e2 = 5
     }
     textSize(70 + textsize);
     stroke(endColor)
-    text("30", windowWidth / 2.0, windowHeight / 2.0);
+    text(Math.floor(time*60), windowWidth / 2.0, windowHeight / 2.0);
     textsize += e2;
   }
-  if (0 < time && time < 0.25) {
-    if (textsize > 200) {
+  else if (0 < time && time <= 0.25) {
+    if (textsize >= 185) {
       e = -5
     }
-    if (textsize < 40) {
+    if (textsize <= 40) {
       e = 5
     }
     textSize(70 + textsize);
     stroke(endColor)
-    text("15", windowWidth / 2.0, windowHeight / 2.0);
+    text(Math.floor(time*60), windowWidth / 2.0, windowHeight / 2.0);
     textsize += e;
   }
 
