@@ -46,7 +46,9 @@ function draw() {
 
   fill(timerColor);
   strokeWeight(0);
-  arc(windowWidth / 2.0, windowHeight / 2.0, w, w, min(arcLength, 3 * HALF_PI - 0.01), 3 * HALF_PI, PIE);
+  if (time > 0) {
+    arc(windowWidth / 2.0, windowHeight / 2.0, w, w, min(arcLength, 3 * HALF_PI - 0.01), 3 * HALF_PI, PIE);
+  }
 
   stroke(222);
   for (let i = 0; i < 12; i++) {
@@ -71,7 +73,7 @@ function draw() {
     almostDone(time)
   }
 
-  if (time < -1) {
+  if (time < 0) {
     noLoop();
   }
 }
