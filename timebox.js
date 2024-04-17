@@ -109,30 +109,33 @@ function addTime(mins) {
   endTime = min(new Date((new Date).getTime() + 1000.0 * 60 * 60), endTime)
 }
 
-function keyPressed({ code }) {
-  if (code === 'KeyR') {
+function keyPressed({ code, key }) {
+  if (key?.toLowerCase() === 'r') {
     endTime = new Date();
     alarming = true;
     noLoop();
     return;
   }
-  else if (code === 'Digit1') {
+  else if (key === '1') {
     addTime(1);
   }
-  else if (code === 'Digit5') {
+  else if (key === '5') {
     addTime(5);
   }
-  else if (code === 'Digit8') {
+  else if (key === '8') {
     addTime(10);
   }
-  else if (code === 'Digit9') {
+  else if (key === '9') {
     addTime(25);
   }
-  else if (code === 'Digit0') {
+  else if (key === '0') {
     addTime(30);
   }
-  else if (code === 'Digit2') {
+  else if (key === '2') {
     addTime(0.1);
+  }
+  else if (key == 'f' || key == 'F') {
+    fullscreen(!fullscreen());
   }
   loop();
 }
