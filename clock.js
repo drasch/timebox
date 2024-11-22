@@ -19,8 +19,8 @@ function draw() {
   let time = String(hour()).padStart(2,'0') + ":" + String(minute()).padStart(2,'0')
   background(20);
 
-  stroke('red');
-  fill('red');
+  stroke('#881111');
+  fill('#881111');
   textAlign(CENTER, CENTER);
   strokeWeight(1);
   text(time, windowWidth/2.0, windowHeight/2.0);
