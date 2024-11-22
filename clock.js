@@ -35,3 +35,9 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   canvasSetup();
 }
+
+function keyPressed({ key }) {
+  if (key == 'f' || key == 'F') {
+    fullscreen(!fullscreen());
+  }
+}
